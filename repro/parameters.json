@@ -1,0 +1,25 @@
+{
+	"yeast"     : "S-23",
+	"model"     : "Monod",
+	"cells"     : "free",
+	"num_param" : 10,
+	"extract_%" : [ 9, 11, 13],
+	"constants" : 
+	[
+		{
+			"names"  : ["mu_max", "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"      ],
+			"values" : [0.424   , 2.042  , 150.0   , 150.0 , 0.125 , 0.53  , 12.55      , 12.23      ,  7.63       ,  0.023     ],
+			"units"  : ["adim"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)"]
+		},			
+		{
+			"names"  : ["mu_max", "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"      ],
+			"values" : [0.117   , 2.030  , 150.0   , 150.0 , 0.093 , 0.53  , 20.47      , 116.4      ,  29.42      ,  0.0205    ],
+			"units"  : ["adim"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)"]
+		},	
+		{
+			"names"  : ["mu_max", "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"      ],
+			"values" : [0.224   , 3.839  , 150.0   , 150.0 , 0.124 , 0.476 , 13.61      , 61.05      ,  21.19      ,  0.025     ],
+			"units"  : ["adim"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)"]
+		}
+	]
+} 

@@ -11,11 +11,12 @@ bac.model <- function(t, pop, param) {
   A  <- pop[6]  # aldehydes
   
   mu_max  = param[1]  # max growth rate
-  q_max   = param[2]  # carrying capacity
-  Yxs     = param[3]  # conjugation rate
-  Yps     = param[4]  # death rate
-  Ksx     = param[5]
-  Ksp     = param[6]
+  q_max   = param[2]  
+  Ksx     = param[3]
+  Ksp     = param[4]
+  Yxs     = param[5]  
+  Yps     = param[6]  
+
   
   Yfa     = param[7]
   Ye      = param[8]
@@ -41,19 +42,15 @@ require('rODE')
 
 # Load the deSolve package
 library(deSolve)
-library('rODE')
-# Define parameters
-mu_max = 0.424
-q_max  = 2.042
-Yxs    = 0.125
-Yps    = 0.53
-Ksx    = 150
-Ksp    = 150
+library(rODE)
+library(rjson)
 
-Yfa    = 12.55
-Ye     = 12.23
-Ya     = 7.63
-Ka     = 0.023
+#reading json input file
+
+list_param <- fromJSON(file = "parameters.json")
+
+# Define parameters
+
 
 dt     = 0.1
 Tmax   = 9
@@ -71,10 +68,9 @@ Time=seq(from=0,to=Tmax,by=dt)
 
 # Define vectors for initial conditions and parameters
 Init.cond=c(X0,P0,S0, FA0, E0, A0) 
-param=c(mu_max,q_max,Yxs,Yps,Ksx,Ksp, Yfa, Ye, Ya, Ka)
-
+param = list_param$constants[[1]]$values
 # Execute
-result <- ode(Init.cond, Time, bac.model, param)
+result <- rk(Init.cond, Time, bac.model, param, method = "rk45dp7")
 
 # Name columns for convenience
 colnames(result) <- c("Time", "X", "P", "S", "FA", "E", "A")
@@ -89,10 +85,12 @@ head(result)
 plot(Time,result[,"X"],type="l",col="red",xlab="Time (d)",ylab="concentration [g/L]", ylim = c(0,1.1*max(result)))
 lines(Time,result[,"P"],col="blue")
 lines(Time,result[,"S"],col="green")
+legend("topright",legend=c("X","P","S"),col=c("red","blue","green"),lty=1)
 
-lines(Time,result[,"FA"],col="purple")
+
+plot(Time,result[,"FA"],type="l",col="purple",xlab="Time (d)",ylab="concentration [g/L]")
 lines(Time,result[,"E"],col="cyan")
 lines(Time,result[,"A"],col="orange")
+legend("bottomright",legend=c("FA","E","A"),col=c("purple","cyan","orange"),lty=1)
 
-legend("topright",legend=c("X","P","S"),col=c("red","blue","green"),lty=1)
 

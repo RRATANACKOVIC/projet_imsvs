@@ -1,3 +1,12 @@
+distance <- function(model, measure){
+  dist <- 0
+  for(t in 1:length(measure))
+  {
+    dist <- dist + (model[t]-measure[t])^2
+  }
+  return(dist)
+}
+
 
 
 bac.model <- function(t, pop, param) {
@@ -48,12 +57,12 @@ library(rjson)
 #reading json input file
 
 list_param <- fromJSON(file = "parameters.json")
-
+measurements_raw <- fromJSON(file = "../datasets/s23_fc_e9.json")
 # Define parameters
 
 
-dt     = 0.1
-Tmax   = 9
+dt     = 2
+Tmax   = 10
 
 X0     = 1.5
 P0     = 0
@@ -93,4 +102,8 @@ lines(Time,result[,"E"],col="cyan")
 lines(Time,result[,"A"],col="orange")
 legend("bottomright",legend=c("FA","E","A"),col=c("purple","cyan","orange"),lty=1)
 
+
+measure <- measurements_raw$varialbes[[1]]$y
+model = result[,2]
+res=optim(param, distance)
 

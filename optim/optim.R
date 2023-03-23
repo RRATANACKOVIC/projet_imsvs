@@ -56,6 +56,7 @@ distance <- function(model, measure)
 library(deSolve)
 library(rODE)
 library(rjson)
+library(nloptr)
 
 #reading json input file
 
@@ -104,9 +105,11 @@ distance_to_data<-function(param){
 }
 
 
-lc = 1/5
-uc = 10
-optim_result= optim(param, distance_to_data, method="L-BFGS-B",lower=lc*param, upper= uc*param)#optim(par=param, fn=distance_to_data)
+lc = 1/4 #coeff to have the minimum bound (to be multiplied with param)
+uc = 4 # idem but for upper bound
+opts <- list("algorithm"="NLOPT_LD_LBFGS",
+             "xtol_rel"=1.0e-8)
+optim_result= optim(param, distance_to_data, method="L-BFGS-B",lower=lc*param, upper= uc*param) #nloptr(param,distance_to_data, cgsolve, opts)#optim(par=param, fn=distance_to_data)
 optim_param = optim_result$par
 
 # Define parameters

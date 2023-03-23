@@ -1,13 +1,3 @@
-distance <- function(model, measure){
-  dist <- 0
-  for(t in 1:length(measure))
-  {
-    dist <- dist + (model[t]-measure[t])^2
-  }
-  return(dist)
-}
-
-
 
 bac.model <- function(t, pop, param) {
   
@@ -47,6 +37,19 @@ bac.model <- function(t, pop, param) {
   list(res)
 }
 
+distance <- function(model, measure)
+{
+  dist <- 0
+  for(t in 1:length(measure))
+  {
+    dist <- dist + (model[t]-measure[t])^2
+  }
+  return(dist)
+}
+
+
+
+
 require('rODE')
 
 # Load the deSolve package
@@ -56,7 +59,7 @@ library(rjson)
 
 #reading json input file
 
-list_param <- fromJSON(file = "parameters.json")
+list_param <- fromJSON(file = "../datasets/parameters.json")
 measurements_raw <- fromJSON(file = "../datasets/s23_fc_e9.json")
 # Define parameters
 
@@ -103,7 +106,5 @@ lines(Time,result[,"A"],col="orange")
 legend("bottomright",legend=c("FA","E","A"),col=c("purple","cyan","orange"),lty=1)
 
 
-measure <- measurements_raw$varialbes[[1]]$y
-model = result[,2]
-res=optim(param, distance)
+
 

@@ -1,0 +1,49 @@
+{
+	"yeast"     : "Saccharomyces cerevisiae S-23 (bottom fermented yeasts)",
+	"model"     : "Monod",
+	"constants" :
+	[
+		{
+			"cells"     : "free",
+			"extract"   : 9,
+			"names"  : ["mu_max"  , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.424     , 2.042  , 150.0   , 150.0 , 0.125 , 0.53  , 12.55      , 12.23      ,  7.63       ,  0.023      , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        ],
+			"units"  : ["j^(-1)"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		},
+		{
+			"cells"     : "free",
+			"extract"   : 11,
+			"names"  : ["mu_max"  , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.117     , 2.030  , 150.0   , 150.0 , 0.093 , 0.53  , 20.47      , 116.4      ,  29.42      ,  0.0205     , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        ],
+			"units"  : ["j^(-1)"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		},
+		{
+			"cells"     : "free",
+			"extract"   : 13,
+			"names"  : ["mu_max"  , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.224     , 3.839  , 150.0   , 150.0 , 0.124 , 0.476 , 13.61      , 61.05      ,  21.19      ,  0.025      , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        , 1.0        ],
+			"units"  : ["j^(-1)"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		},
+		{
+			"cells"     : "immobilized",
+			"extract"   : 9,
+			"names"  : ["mu_max"  , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.3       , 2.756  , 57.74   , 166.33, 0.063 , 0.58  , 4.68       , 13.03      ,  16.06      ,  0.0205     , 0.708      , 1.350      , 1.065      , 0.373      , 2.105      , 0.891      ],
+			"units"  : ["j^(-1)"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		},
+		{
+			"cells"     : "immobilized",
+			"extract"   : 11,
+			"names"  : ["mu_max"  , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.3       , 5.53   , 204.26  , 226.71, 0.6   , 0.58  , 33.6       , 144.2      ,  45.94      ,  0.035      , 2.564      , 2.724      , 1.239      , 1.641      , 1.562      , 3.5        ],
+			"units"  : ["j^(-1)"  ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		},
+		{
+			"cells"     : "immobilized",
+			"extract"   : 13,
+			"names"  : ["mu_max" , "q_max", "Ksx"   , "Ksp" , "Yxs" , "Yps" , "Yfa"      , "Ye"       ,  "Ya"       ,  "ka"       , "eta_mu"   , "eta_q"    , "eta_e"    , "eta_fa"   , "eta_a"    , "eta_ka"   ],
+			"values" : [0.3      , 4.901  , 221.420 , 226.72, 0.063 , 0.58  , 8.15       , 31.72      ,  11.36      ,  0.0513     , 1.339      , 1.276      , 0.52       , 0.599      , 0.536      , 2.052      ],
+			"units"  : ["j^(-1)" ,"g/L"   , "j^(-1)","g/L"  ,"adim" ,"adim" , "mg/(g*d)" , "mg/(g*d)" ,  "mg/(g*d)" ,  "mg/(g*d)" , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     , "adim"     ]
+		}
+	]
+}
